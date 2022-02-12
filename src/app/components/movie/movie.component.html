@@ -1,6 +1,25 @@
-<div class="movie bg-gray-200 p-4" *ngIf="movie">
-    <p>{{movie.title}}</p>
-    <div>{{movie.release_date}}</div>
-    <div class="overview mb-4">{{movie.overview}}</div>
-    <a class="cursor-pointer bg-blue-600 text-white p-2 border-r-4" [href]="movie.homepage" target="_blank">Watch the Movie</a>
+<div
+  class="movie h-full p-8 text-white flex flex-col bg-gray-800 bg-blend-multiply"
+  [ngStyle]="{
+    'background-image':
+      'url(' +
+      'https://image.tmdb.org/t/p/original' +
+      movie.backdrop_path +
+      ')',
+    'background-size': 'cover'
+  }"
+  *ngIf="movie"
+>
+  <div class="header flex items-center justify-between mb-8">
+    <h2 class="text-7xl text-center">{{ movie.title }}</h2>
+    <a
+      class="cursor-pointer bg-blue-600 text-white p-4 rounded-md"
+      [href]="movie.homepage"
+      target="_blank"
+      >Watch the Movie</a
+    >
+  </div>
+  <div>{{ movie.release_date }}</div>
+  <div class="flex-1">{{ movie.overview }}</div>
+  <div class="watch "></div>
 </div>
