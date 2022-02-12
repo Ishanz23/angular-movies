@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MoviesService } from 'src/app/movies.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-movies',
+  templateUrl: './movies.component.html',
+  styleUrls: ['./movies.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class MoviesComponent implements OnInit {
 
   movies: any[] = []
   error_message: string = ''
 
-  constructor(private moviesService: MoviesService) {
+  constructor(private moviesService: MoviesService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class DashboardComponent implements OnInit {
   }
 
   openMovie(movie: any) {
-    console.log(movie.title)
+    // navigate to /movie/movieid
+    this.router.navigate([`/movie/${movie.id}`]);
   }
 }

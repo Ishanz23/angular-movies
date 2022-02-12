@@ -1,0 +1,10 @@
+<div class="error mx-auto p-8 bg-red-400 text-white" *ngIf="error_message !== ''">{{ error_message }}</div>
+<h2 class="py-4 px-8">Movies</h2>
+<div class="movies grid grid-cols-5 auto-rows-fr gap-2 p-4">
+    <div class="movie py-2 cursor-pointer" *ngFor="let movie of movies" (click)="openMovie(movie)">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="">
+        <div>{{ movie.title }}</div>
+        <div class="release-date">{{ movie.release_date}}</div>
+    </div>
+</div>
+

@@ -4,14 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieComponent } from './movie/movie.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     MovieComponent,
-    DashboardComponent
+    MoviesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
