@@ -11,15 +11,20 @@
   *ngIf="movie"
 >
   <div class="header flex items-center justify-between mb-8">
-    <h2 class="text-7xl text-center">{{ movie.title }}</h2>
+    <div class="title">
+      <div class="text-7xl text-teal-100 hover:text-teal-300 transition-all">{{ movie.title }}</div>
+      <div class="text-md">{{ movie.tagline }}</div>
+    </div>
     <a
-      class="cursor-pointer bg-blue-600 text-white p-4 rounded-md"
+      *ngIf="movie.homepage"
+      class="cursor-pointer bg-teal-600 text-white p-4 rounded-md transition-colors hover:bg-teal-800"
       [href]="movie.homepage"
       target="_blank"
       >Watch the Movie</a
     >
   </div>
-  <div>{{ movie.release_date }}</div>
+
+  <div class="mb-8">Relased on <span class="text-teal-100">{{ movie.release_date }}</span></div>
   <div class="flex-1">{{ movie.overview }}</div>
-  <div class="watch "></div>
+  <div class="watch"></div>
 </div>
